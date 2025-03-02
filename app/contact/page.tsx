@@ -2,7 +2,6 @@
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import FixedBackground from "../fixed_background";
 import Image from "next/image";
 import { handleSubmit } from "../actions";
 import linkedIn from '../../public/LI-Logo.png'

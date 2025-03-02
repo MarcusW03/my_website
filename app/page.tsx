@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import FixedBackground from "./fixed_background";
 import Image from "next/image"
 import { Moon_Dance } from "next/font/google";
 import Link from 'next/link'
