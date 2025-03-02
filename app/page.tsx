@@ -14,7 +14,6 @@ const moon_dance = Moon_Dance({
 export default function Home() {
   return (
     <div className="bg-fixed bg-cover flex flex-col bg-black text-gray-200">
-      <FixedBackground />
       <Navbar />
       <section id="home" className=" page flex-grow container mx-auto px-4 text-center flex flex-col items-center justify-center z-1">
         <h1 className={`${moon_dance.className} text-8xl font-extrabold mt-10 drop-shadow-lg`}>Marcus Wright</h1>

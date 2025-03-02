@@ -11,7 +11,6 @@ export default function Contact() {
     
     return (
       <div className="flex flex-col text-white">
-        <FixedBackground />
         <Navbar />
         <section id="contact" className="pt-20 page flex items-center justify-center text-white px-6 z-1">
             <div className="max-w-4xl w-full bg-gray-800 opacity-90 rounded-2xl shadow-lg p-8 md:p-12">

@@ -83,7 +83,6 @@ export default function Projects() {
   
   return (
     <div className="flex flex-col text-white">
-      <FixedBackground />
       <Navbar />
       <main className="min-h-screen container mx-auto px-4 py-10">
         <h1 className="text-4xl title font-bold text-center text-white mb-6">My Projects</h1>
