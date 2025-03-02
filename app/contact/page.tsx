@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import FixedBackground from "../fixed_background";
 import Image from "next/image";
 import { handleSubmit } from "../actions";
+import linkedIn from '../../public/LI-Logo.png'
 
 export default function Contact() {
     
@@ -75,7 +76,7 @@ export default function Contact() {
                     <a className="hover:text-blue-400 hover:scale-105 duration-500" href="tel:+18305540614">(830) 554-0614</a>
                     <a href="https://www.linkedin.com/in/marcus-wright-523830297" target="_blank" className="text-gray-400 max-w-50 hover:scale-105 duration-500 transition">
                     <Image
-                        src="/LI-logo.png"
+                        src={linkedIn}
                         alt="LinkedIn Logo"
                         width={2212}
                         height={540}

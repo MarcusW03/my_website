@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import background from '../public/background.jpg'
 
 export default function FixedBackground() {
     return (
@@ -12,7 +13,7 @@ export default function FixedBackground() {
         zIndex: 0 // Ensure the background stays behind other content
       }}>
         <Image
-          src="/background.jpg"
+          src={background}
           alt="Background Image"
           fill={true}
           quality={100}
