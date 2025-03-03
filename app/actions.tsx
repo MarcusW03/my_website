@@ -20,7 +20,7 @@ export async function handleSubmit(){
             headers: { 
                     },
             body: JSON.stringify({
-                text: `📩 *New Contact Form Submission*\n👤 *Name:* ${name.value}\n✉️ *Email:* ${email.value}\n📝 *Message:* ${message.value}`,
+                text: `*New Contact Form Submission*\n\n*Name:* ${name.value}\n*Email:* ${email.value}\n*Message:* ${message.value}`,
             }),
         });
         alert('Message sent successfully!');
