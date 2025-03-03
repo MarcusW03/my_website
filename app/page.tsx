@@ -21,10 +21,8 @@ export default function Home() {
           <a href="/projects" className="bg-gray-500 text-gray-200 font-semibold py-2 px-6 rounded-md shadow-md hover:bg-blue-400 duration-600">My Projects</a>
         </div>
       </section>
-      <section id="about" className="page flex-grow container mx-auto px-4 text-center flex flex-col items-center justify-center z-1">
-        <h1 className="text-4xl font-bold mt-10 drop-shadow-lg"></h1>
-        <div className="flex-grow container mx-auto px-4 text-center flex flex-col items-center justify-center z-1">
-            <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-2">
+      <section id="about" className="page flex-grow container mx-auto px-6 py-12 text-center flex flex-col items-center justify-center z-1">
+            <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-2">
 
             <div className="flex justify-center items-center min-h-150">
               <div className="bg-gray-300 rounded-2xl overflow-hidden shadow-lg duration-800 hover:scale-105">
@@ -37,7 +35,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-gray-300 rounded-2xl shadow-lg p-8 flex flex-col min-w-150">
+            <div className="bg-gray-300 rounded-2xl shadow-lg p-8 flex flex-col min-h-150">
               <h2 className="text-3xl font-bold text-gray-800 place-self-start">About Marcus</h2>
               <div className="pt-5 flex flex-col items-center justify-center">
                 <p className="text-gray-700 text-md mt-4">
@@ -64,7 +62,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
       </section>
       <Footer />
     </div>
