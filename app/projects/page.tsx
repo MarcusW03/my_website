@@ -17,7 +17,7 @@ export default function Projects() {
                with AI systems. Gained experience with Human-Computer Interaction, and Explainable AI (xAI) systems. \
               \n\n Integrated AI explanation methods into a Deep Similarity Machine Learning Model and added to a web-based \
                frontend to facilitate participant interaction with the AI explanations. Conducted a user study with modified frontend.",  
-      doi: "" },
+      doi: "https://doi.org/10.1145/3708359.3712121" },
     { title: "Machine Learning Project", description: "Group Project for CS66: Machine Learning at Swarthmore College", image: "", 
       date: "October 2024 - December 2024",
       details: "Designed and implemented advanced imputation strategies \
