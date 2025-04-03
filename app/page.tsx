@@ -44,11 +44,10 @@ export default function Home() {
                 </p> 
                 <p className="text-gray-700 text-md mt-4"> 
                 In Summer 2024, Marcus participated in the REU Program for Pervasive Computing at Temple University&apos;s 
-                VIDAR Lab, where he made significant research contributions, earning second authorship on a <Link className="text-gray-900 hover:text-blue-700" href="/projects">paper</Link> now 
-                in press for the 30th Annual ACM Conference on Intelligent User Interfaces. He will also help present 
-                this work at the conference and has continued his research with VIDAR Lab beyond the program&apos;s conclusion.
-                 Additionally, after the program&apos;s conclusion, he has continued to work in the VIDAR Lab as a Full-Stack 
-                 Software Engineer on TraffickCam, a reverse image search system designed to combat human trafficking.
+                VIDAR Lab, where he made significant research contributions, earning second authorship on their <Link className="text-gray-900 hover:text-blue-700" href="/projects">paper</Link>. 
+                He recently helped present this work at the 30th International Conference for Intelligent User Interfaces, and has 
+                continued his research with VIDAR Lab beyond the program&apos;s conclusion. Additionally, he has continued to work in 
+                the VIDAR Lab as a Full-Stack Software Engineer on TraffickCam, a reverse image search system designed to combat human trafficking.
                 </p>
                 <p className="text-gray-700 text-md mt-4">
                 Beyond academics, Marcus has embraced teamwork through various group projects, strengthening his ability 
