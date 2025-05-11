@@ -11,7 +11,7 @@ export default function Projects() {
     <div className="flex flex-col text-white">
       <Navbar />
       <main className="min-h-screen container mx-auto px-4 py-10">
-        <h1 className="text-4xl title font-bold text-center text-white mb-6">My Projects</h1>
+        <h1 className="text-4xl title font-bold text-center text-white mb-6 drop-shadow-lg">My Projects</h1>
         <div className="grid projects grid-cols-1 place-items-center gap-10">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
