@@ -39,18 +39,23 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-gray-800 place-self-start">About Marcus</h2>
               <div className="pt-5 flex flex-col items-center justify-center">
                 <p className="text-gray-700 text-md mt-4">
-                   Marcus Wright is a senior at <a className="text-gray-900 hover:text-blue-700" href="https://www.swarthmore.edu/" target="_blank">Swarthmore College</a>, 
-                   majoring in Computer Science with a minor in Philosophy.
+                   Marcus Wright recently graduated from <a className="text-gray-900 hover:text-blue-700" href="https://www.swarthmore.edu/" target="_blank">Swarthmore College</a>, 
+                   recieving a Bachelor&apos;s of Arts (BA) in Computer Science with a Minor in Philosophy.
                 </p> 
                 <p className="text-gray-700 text-md mt-4"> 
                 In Summer 2024, Marcus participated in the REU Program for Pervasive Computing at Temple University&apos;s 
-                VIDAR Lab, where he made significant research contributions, earning second authorship on their <Link className="text-gray-900 hover:text-blue-700" href="/projects">paper</Link>. 
-                He recently helped present this work at the 30th International Conference for Intelligent User Interfaces, and has 
-                continued his research with VIDAR Lab beyond the program&apos;s conclusion. Additionally, he has continued to work in 
-                the VIDAR Lab as a Full-Stack Software Engineer on TraffickCam, a reverse image search system designed to combat human trafficking.
+                VIDAR Lab where he made significant research contributions, earning second authorship on their <Link className="text-gray-900 hover:text-blue-700" href="/projects">paper</Link>. 
+                He helped to present this work at the 30th International Conference for Intelligent User Interfaces, and has 
+                continued his research with VIDAR Lab beyond the program&apos;s conclusion. 
                 </p>
                 <p className="text-gray-700 text-md mt-4">
-                Beyond academics, Marcus has embraced teamwork through various group projects, strengthening his ability 
+                Additionally, he has continued to work in the VIDAR Lab as a Full-Stack Developer on TraffickCam, 
+                a reverse image search system designed to combat human trafficking. Marcus has made significant contributions
+                to both the backend and frontend of the TraffickCam platform, including a complete overhaul and refactoring of the 
+                entire search functionality. 
+                </p>
+                <p className="text-gray-700 text-md mt-4">
+                Beyond academics, Marcus has embraced teamwork through various group projects and programs, strengthening his ability 
                 to collaborate effectively. He has also held multiple leadership roles, including President of Swarthmore 
                 Coed Club Volleyball and Student Board Member on The Advisory Council to the CS Department (ACCS).
                 </p>
