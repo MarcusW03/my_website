@@ -68,7 +68,6 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-center mb-6">Reach Me at:</h2>
                 <div className="grid flex grid-cols-1 md:grid-cols-3 items-center justify-center text-center gap-x-20 gap-y-5">
                     <div className="grid flex grid-cols-1 place-items-center justify-center gap-1">
-                        <a className="hover:text-blue-400 hover:scale-105 duration-500" href="mailto:bwright1@swarthmore.edu">bwright1@swarthmore.edu</a>
                         <a className="hover:text-blue-400 hover:scale-105 duration-500" href="mailto:marcus03wright@icloud.com">marcus03wright@icloud.com</a>
                     </div>
                     <a className="hover:text-blue-400 hover:scale-105 duration-500" href="tel:+18305540614">(830) 554-0614</a>
