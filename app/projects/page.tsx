@@ -56,7 +56,7 @@ function ProjectCard({ project }: { project: Project }) {
 
   return (
     <section 
-      id={project.title} 
+      id={project.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')} 
       className="group mx-auto w-full md:w-[60vw] border-2 border-transparent hover:border-blue-400 bg-gray-300 shadow-lg rounded-lg overflow-hidden transform transition duration-700 hover:scale-105"
     >
       <div 

@@ -10,7 +10,7 @@ export default function Contact() {
 
     return (
       <div className="flex flex-col text-white">
-        <section id="contact" className="pt-20 min-h-[95vh] flex items-center justify-center text-white px-6 z-1">
+        <section id="contact" className="pt-20 min-h-[95vh] flex items-center justify-center text-white px-6 relative z-10">
             <div className="max-w-4xl w-full bg-gray-800 opacity-90 rounded-2xl shadow-lg p-8 md:p-12">
 
             <h2 className="text-4xl font-bold text-center mb-6">Get in Touch</h2>
@@ -25,8 +25,9 @@ export default function Contact() {
 
             <form action={action} className="space-y-6" id="form">
                 <div>
-                <label className="block text-gray-300 text-sm font-semibold mb-2">Your Name</label>
+                <label htmlFor="name" className="block text-gray-300 text-sm font-semibold mb-2">Your Name</label>
                 <input 
+                    id="name"
                     type="text"
                     name="name"
                     required
@@ -36,8 +37,9 @@ export default function Contact() {
                 </div>
     
                 <div>
-                <label className="block text-gray-300 text-sm font-semibold mb-2">Your Email</label>
+                <label htmlFor="email" className="block text-gray-300 text-sm font-semibold mb-2">Your Email</label>
                 <input 
+                    id="email"
                     type="email" 
                     name="email"
                     required
@@ -47,8 +49,9 @@ export default function Contact() {
                 </div>
     
                 <div>
-                <label className="block text-gray-300 text-sm font-semibold mb-2">Your Message</label>
+                <label htmlFor="message" className="block text-gray-300 text-sm font-semibold mb-2">Your Message</label>
                 <textarea 
+                    id="message"
                     name="message"
                     required
                     placeholder="Write your message here..." 

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { participants, type Participant } from "./participants"
 
-export default function Projects() {
+export default function SurveyParticipantsPage() {
    
   return (
     <div className="flex flex-col text-white">
