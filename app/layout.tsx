@@ -4,7 +4,6 @@ import { Analytics } from '@vercel/analytics/next'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FixedBackground from "./fixed_background";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const geistSans = Geist({
@@ -34,7 +33,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       > 
         <FixedBackground />
-        <Navbar />
         {children}
         <Footer />
         <SpeedInsights />

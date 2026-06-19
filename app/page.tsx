@@ -11,7 +11,7 @@ const moon_dance = Moon_Dance({
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="flex-1 flex items-center justify-center px-4 py-20">
+      <main className="flex-1 flex items-center justify-center px-4 py-8">
         <div className="w-full max-w-md bg-gray-900/85 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center gap-6 text-white">
 
           <div className="text-center">
@@ -63,7 +63,7 @@ export default function Home() {
 
           <Link
             href="/contact"
-            className="w-full text-center bg-blue-500 hover:bg-blue-600 transition-colors duration-200 text-white font-semibold py-3 rounded-lg shadow-md"
+            className="w-full text-center bg-blue-800 hover:bg-blue-700 transition-colors duration-200 text-white font-semibold py-3 rounded-lg shadow-md"
           >
             Contact Me
           </Link>
