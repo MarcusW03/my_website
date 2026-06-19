@@ -1,9 +1,7 @@
 'use client';
 
-import Image from "next/image";
 import { useActionState } from "react";
 import { handleSubmit } from "../actions";
-import linkedIn from '../../public/LI-Logo.png'
 
 export default function Contact() {
     const [state, action, isPending] = useActionState(handleSubmit, { status: 'idle' as const });
@@ -14,7 +12,7 @@ export default function Contact() {
             <div className="max-w-4xl w-full bg-gray-800 opacity-90 rounded-2xl shadow-lg p-8 md:p-12">
 
             <h2 className="text-4xl font-bold text-center mb-6">Get in Touch</h2>
-            <p className="text-gray-300 text-center mb-8">Feel free to reach out via the form below or connect with me on social media.</p>
+            <p className="text-gray-300 text-center mb-8">Send me a message and I&apos;ll get back to you.</p>
 
             {state.status === 'success' && (
               <p className="text-green-400 text-center mb-4">Message sent successfully!</p>
@@ -67,27 +65,6 @@ export default function Contact() {
             </form>
             </div>
             
-        </section>
-        
-        <section id="links" className="pt-5 flex items-center justify-center text-white px-6 z-1">
-            <div className="max-w-4xl w-full bg-gray-800 opacity-90 rounded-2xl shadow-lg p-8 md:p-12">
-            
-            <h2 className="text-2xl font-bold text-center mb-6">Reach Me at:</h2>
-                <div className="grid flex grid-cols-1 md:grid-cols-3 items-center justify-center text-center gap-x-20 gap-y-5">
-                    <div className="grid flex grid-cols-1 place-items-center justify-center gap-1">
-                        <a className="hover:text-blue-400 hover:scale-105 duration-500" href="mailto:marcus03wright@icloud.com">marcus03wright@icloud.com</a>
-                    </div>
-                    <a className="hover:text-blue-400 hover:scale-105 duration-500" href="tel:+18305540614">(830) 554-0614</a>
-                    <a href="https://www.linkedin.com/in/marcus-wright-523830297" target="_blank" className="place-self-center text-gray-400 max-w-50 hover:scale-105 duration-500 transition">
-                    <Image
-                        src={linkedIn}
-                        alt="LinkedIn Logo"
-                        width={2212}
-                        height={540}
-                        />
-                    </a>
-                </div>
-            </div>
         </section>
     </div>
     );
