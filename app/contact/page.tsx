@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { handleSubmit } from "../actions";
 
@@ -8,8 +9,12 @@ export default function Contact() {
 
     return (
       <div className="flex flex-col text-white">
-        <section id="contact" className="pt-20 min-h-[95vh] flex items-center justify-center text-white px-6 z-1">
+        <section id="contact" className="min-h-screen flex items-center justify-center text-white px-6 py-10 z-1">
             <div className="max-w-4xl w-full bg-gray-800 opacity-90 rounded-2xl shadow-lg p-8 md:p-12">
+
+            <Link href="/" className="inline-flex items-center gap-1 text-gray-400 hover:text-white text-sm mb-6 transition-colors duration-200">
+              ← Back
+            </Link>
 
             <h2 className="text-4xl font-bold text-center mb-6">Get in Touch</h2>
             <p className="text-gray-300 text-center mb-8">Send me a message and I&apos;ll get back to you.</p>
