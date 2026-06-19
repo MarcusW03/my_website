@@ -1,6 +1,6 @@
 import { Moon_Dance } from "next/font/google";
 import Link from 'next/link';
-import { Mail, Phone, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, FileText } from 'lucide-react';
 
 const moon_dance = Moon_Dance({
   subsets: ['latin'],
@@ -24,17 +24,17 @@ export default function Home() {
           <div className="w-full flex flex-col gap-3">
             <a
               href="mailto:marcus03wright@icloud.com"
-              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-600 transition-colors duration-200 text-sm"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-800 transition-colors duration-200 text-sm"
             >
-              <Mail size={18} className="shrink-0 text-blue-400" />
+              <Mail size={18} className="shrink-0 text-blue-300" />
               <span>marcus03wright@icloud.com</span>
             </a>
 
             <a
               href="tel:+18305540614"
-              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-600 transition-colors duration-200 text-sm"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-800 transition-colors duration-200 text-sm"
             >
-              <Phone size={18} className="shrink-0 text-blue-400" />
+              <Phone size={18} className="shrink-0 text-blue-300" />
               <span>(830) 554-0614</span>
             </a>
 
@@ -42,9 +42,9 @@ export default function Home() {
               href="https://www.linkedin.com/in/marcus-wright-523830297"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-600 transition-colors duration-200 text-sm"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-800 transition-colors duration-200 text-sm"
             >
-              <Linkedin size={18} className="shrink-0 text-blue-400" />
+              <Linkedin size={18} className="shrink-0 text-blue-300" />
               <span>LinkedIn</span>
             </a>
 
@@ -52,10 +52,20 @@ export default function Home() {
               href="https://github.com/MarcusW03"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-600 transition-colors duration-200 text-sm"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-800 transition-colors duration-200 text-sm"
             >
-              <Github size={18} className="shrink-0 text-blue-400" />
+              <Github size={18} className="shrink-0 text-blue-300" />
               <span>GitHub</span>
+            </a>
+
+            <a
+              href="https://doi.org/10.1145/3708359.3712121"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-800 transition-colors duration-200 text-sm"
+            >
+              <FileText size={18} className="shrink-0 text-blue-300" />
+              <span>Published Paper — IUI 2025</span>
             </a>
           </div>
 
