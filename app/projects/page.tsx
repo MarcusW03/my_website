@@ -1,24 +1,20 @@
 "use client";
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import Image from "next/image";
-import { projects } from "./projects"
+import { projects, type Project } from "./projects"
 
 export default function Projects() {
    
   return (
     <div className="flex flex-col text-white">
-      <Navbar />
       <main className="min-h-screen container mx-auto px-4 py-10">
-        <h1 className="text-4xl title font-bold text-center text-white mb-6 drop-shadow-lg">My Projects</h1>
-        <div className="grid projects grid-cols-1 place-items-center gap-10">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+        <h1 className="text-4xl my-[50px] font-bold text-center text-white drop-shadow-lg">My Projects</h1>
+        <div className="grid min-h-[60vh] grid-cols-1 place-items-center gap-10">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
@@ -55,13 +51,13 @@ function DOI(doi: string | undefined) {
   }
 }
 
-function ProjectCard({ project }: {project:any}) {
+function ProjectCard({ project }: { project: Project }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <section 
       id={project.title} 
-      className="group project border-2 border-transparent hover:border-blue-400 bg-gray-300 shadow-lg rounded-lg overflow-hidden transform transition duration-700 hover:scale-105"
+      className="group mx-auto w-full md:w-[60vw] border-2 border-transparent hover:border-blue-400 bg-gray-300 shadow-lg rounded-lg overflow-hidden transform transition duration-700 hover:scale-105"
     >
       <div 
         className="p-4 cursor-pointer md:cursor-default" 
