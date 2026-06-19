@@ -1,69 +1,75 @@
-import Image from "next/image"
 import { Moon_Dance } from "next/font/google";
-import Link from 'next/link'
+import Link from 'next/link';
+import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 
 const moon_dance = Moon_Dance({
   subsets: ['latin'],
   weight: "400",
-  display: "swap", 
+  display: "swap",
 });
 
 export default function Home() {
   return (
-    <div className="bg-fixed bg-cover flex flex-col bg-black text-gray-200">
-      <section id="home" className=" min-h-[95vh] flex-grow container mx-auto px-4 text-center flex flex-col items-center justify-center z-1">
-        <h1 className={`${moon_dance.className} text-8xl font-extrabold mt-10 drop-shadow-lg`}>Marcus Wright</h1>
-        <p className="pt-10 mt-4 text-md opacity-100">Aspiring Software Engineer, AI/ML Engineer, Researcher</p>
-        <div className="pt-10 mt-6">
-          <a href="/projects" className="bg-gray-500 text-gray-200 font-semibold py-2 px-6 rounded-md shadow-md hover:bg-blue-400 duration-600">My Projects</a>
-        </div>
-      </section>
-      <section id="about" className="min-h-[95vh] flex-grow container mx-auto px-6 py-12 text-center flex flex-col items-center justify-center z-1">
-            <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-2">
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-1 flex items-center justify-center px-4 py-20">
+        <div className="w-full max-w-md bg-gray-900/85 backdrop-blur-sm rounded-2xl shadow-2xl p-10 flex flex-col items-center gap-6 text-white">
 
-            <div className="flex justify-center items-center min-h-150">
-              <div className="bg-gray-300 rounded-2xl overflow-hidden shadow-lg duration-800 hover:scale-105">
-                <Image 
-                  src="/personal_picture.jpg" 
-                  alt="Marcus Wright presenting" 
-                  width={400}
-                  height={1000}
-                />
-              </div>
-            </div>
-
-            <div className="bg-gray-300 rounded-2xl shadow-lg p-8 flex flex-col min-h-150">
-              <h2 className="text-3xl font-bold text-gray-800 place-self-start">About Marcus</h2>
-              <div className="pt-5 flex flex-col items-center justify-center">
-                <p className="text-gray-700 text-md mt-4">
-                   Marcus Wright recently graduated from <a className="text-gray-900 hover:text-blue-700" href="https://www.swarthmore.edu/" target="_blank">Swarthmore College</a>, 
-                   recieving a Bachelor&apos;s of Arts (BA) in Computer Science with a Minor in Philosophy.
-                </p> 
-                <p className="text-gray-700 text-md mt-4"> 
-                In Summer 2024, Marcus participated in the REU Program for Pervasive Computing at Temple University&apos;s 
-                VIDAR Lab where he made significant research contributions, earning second authorship on their <Link className="text-gray-900 hover:text-blue-700" href="/projects">paper</Link>. 
-                He helped to present this work at the 30th International Conference for Intelligent User Interfaces, and has 
-                continued his research with VIDAR Lab beyond the program&apos;s conclusion. 
-                </p>
-                <p className="text-gray-700 text-md mt-4">
-                Additionally, he has continued to work in the VIDAR Lab as a Full-Stack Developer on TraffickCam, 
-                a reverse image search system designed to combat human trafficking. Marcus has made significant contributions
-                to both the backend and frontend of the TraffickCam platform, including a complete overhaul and refactoring of the 
-                entire search functionality. 
-                </p>
-                <p className="text-gray-700 text-md mt-4">
-                Beyond academics, Marcus has embraced teamwork through various group projects and programs, strengthening his ability 
-                to collaborate effectively. He has also held multiple leadership roles, including President of Swarthmore 
-                Coed Club Volleyball and Student Board Member on The Advisory Council to the CS Department (ACCS).
-                </p>
-                <p className="text-gray-700 text-md mt-4">
-                Driven by curiosity and a passion for impactful work, Marcus hopes to build a career that fosters both 
-                continuous learning and meaningful contributions. 
-                  </p>
-              </div>
-            </div>
+          <div className="text-center">
+            <h1 className={`${moon_dance.className} text-6xl drop-shadow-lg`}>Marcus Wright</h1>
+            <p className="mt-2 text-gray-300 text-sm tracking-widest uppercase">Software Engineer</p>
           </div>
-      </section>
+
+          <div className="w-full border-t border-gray-700" />
+
+          <div className="w-full flex flex-col gap-3">
+            <a
+              href="mailto:marcus03wright@icloud.com"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-600 transition-colors duration-200 text-sm"
+            >
+              <Mail size={18} className="shrink-0 text-blue-400" />
+              <span>marcus03wright@icloud.com</span>
+            </a>
+
+            <a
+              href="tel:+18305540614"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-600 transition-colors duration-200 text-sm"
+            >
+              <Phone size={18} className="shrink-0 text-blue-400" />
+              <span>(830) 554-0614</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/marcus-wright-523830297"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-600 transition-colors duration-200 text-sm"
+            >
+              <Linkedin size={18} className="shrink-0 text-blue-400" />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="https://github.com/MarcusW03"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800 hover:bg-blue-600 transition-colors duration-200 text-sm"
+            >
+              <Github size={18} className="shrink-0 text-blue-400" />
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <div className="w-full border-t border-gray-700" />
+
+          <Link
+            href="/contact"
+            className="w-full text-center bg-blue-500 hover:bg-blue-600 transition-colors duration-200 text-white font-semibold py-3 rounded-lg shadow-md"
+          >
+            Contact Me
+          </Link>
+        </div>
+      </main>
     </div>
   );
 }
+
