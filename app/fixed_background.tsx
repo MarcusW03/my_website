@@ -3,7 +3,7 @@ import background from '../public/background.jpg'
 
 export default function FixedBackground() {
     return (
-      <div className="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden z-0 pointer-events-none">
         <Image
           src={background}
           alt=""
