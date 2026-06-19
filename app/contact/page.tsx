@@ -1,61 +1,71 @@
 'use client';
 
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import Image from "next/image";
+import { useActionState } from "react";
 import { handleSubmit } from "../actions";
 import linkedIn from '../../public/LI-Logo.png'
 
 export default function Contact() {
-    
+    const [state, action, isPending] = useActionState(handleSubmit, { status: 'idle' as const });
+
     return (
       <div className="flex flex-col text-white">
-        <Navbar />
-        <section id="contact" className="pt-20 page flex items-center justify-center text-white px-6 z-1">
+        <section id="contact" className="pt-20 min-h-[95vh] flex items-center justify-center text-white px-6 relative z-10">
             <div className="max-w-4xl w-full bg-gray-800 opacity-90 rounded-2xl shadow-lg p-8 md:p-12">
 
             <h2 className="text-4xl font-bold text-center mb-6">Get in Touch</h2>
             <p className="text-gray-300 text-center mb-8">Feel free to reach out via the form below or connect with me on social media.</p>
-    
-            <form action={handleSubmit} className="space-y-6" id="form">
+
+            {state.status === 'success' && (
+              <p className="text-green-400 text-center mb-4">Message sent successfully!</p>
+            )}
+            {state.status === 'error' && (
+              <p className="text-red-400 text-center mb-4">{state.message}</p>
+            )}
+
+            <form action={action} className="space-y-6" id="form">
                 <div>
-                <label className="block text-gray-300 text-sm font-semibold mb-2">Your Name</label>
+                <label htmlFor="name" className="block text-gray-300 text-sm font-semibold mb-2">Your Name</label>
                 <input 
+                    id="name"
                     type="text"
-                    id="form_name"
                     name="name"
+                    required
                     placeholder="John Doe" 
                     className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none"
                 />
                 </div>
     
                 <div>
-                <label className="block text-gray-300 text-sm font-semibold mb-2">Your Email</label>
+                <label htmlFor="email" className="block text-gray-300 text-sm font-semibold mb-2">Your Email</label>
                 <input 
+                    id="email"
                     type="email" 
-                    id="form_email"
                     name="email"
+                    required
                     placeholder="your@email.com" 
                     className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none"
                 />
                 </div>
     
                 <div>
-                <label className="block text-gray-300 text-sm font-semibold mb-2">Your Message</label>
+                <label htmlFor="message" className="block text-gray-300 text-sm font-semibold mb-2">Your Message</label>
                 <textarea 
-                    placeholder="Write your message here..." 
-                    id="form_message"
+                    id="message"
                     name="message"
+                    required
+                    placeholder="Write your message here..." 
                     rows={5}
                     className="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none"
                 ></textarea>
                 </div>
     
                 <button 
-                type="submit" 
-                className="w-full bg-blue-500 hover:bg-blue-600 transition text-white font-semibold py-3 rounded-lg shadow-md"
+                type="submit"
+                disabled={isPending}
+                className="w-full bg-blue-500 hover:bg-blue-600 transition text-white font-semibold py-3 rounded-lg shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                Send Message
+                {isPending ? 'Sending...' : 'Send Message'}
                 </button>
             </form>
             </div>
@@ -82,8 +92,6 @@ export default function Contact() {
                 </div>
             </div>
         </section>
-        <Footer />
     </div>
     );
 }
-    

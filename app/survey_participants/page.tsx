@@ -1,34 +1,30 @@
 "use client";
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import { participants } from "./participants"
+import { participants, type Participant } from "./participants"
 
-export default function Projects() {
+export default function SurveyParticipantsPage() {
    
   return (
     <div className="flex flex-col text-white">
-      <Navbar />
       <main className="min-h-screen container mx-auto px-4 py-10">
-        <h1 className="text-4xl title font-bold text-center text-white mb-6 drop-shadow-lg">Thanks for Filling Out My Survey!</h1>
-        <div className="grid projects grid-cols-1 place-items-center gap-10">
-          {participants.map((participant, index) => (
-            <Survey_Participant key={index} participant={participant} />
+        <h1 className="text-4xl my-[50px] font-bold text-center text-white drop-shadow-lg">Thanks for Filling Out My Survey!</h1>
+        <div className="grid min-h-[60vh] grid-cols-1 place-items-center gap-10">
+          {participants.map((participant) => (
+            <Survey_Participant key={participant.name} participant={participant} />
           ))}
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
 
-function Survey_Participant({ participant }: {participant:any}) {
+function Survey_Participant({ participant }: { participant: Participant }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <section 
       id={participant.name} 
-      className="group project border-2 border-transparent hover:border-blue-400 bg-gray-300 shadow-lg rounded-lg overflow-hidden transform transition duration-700 hover:scale-105"
+      className="group mx-auto w-full md:w-[60vw] border-2 border-transparent hover:border-blue-400 bg-gray-300 shadow-lg rounded-lg overflow-hidden transform transition duration-700 hover:scale-105"
     >
       <div 
         className="p-4 cursor-pointer md:cursor-default" 

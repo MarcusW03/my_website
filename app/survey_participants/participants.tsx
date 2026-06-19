@@ -1,4 +1,11 @@
-export const participants = [
+export interface Participant {
+  name: string;
+  email: string;
+  winner: boolean;
+  message: string;
+}
+
+export const participants: Participant[] = [
     {   name: "Gwyn", 
         email: "gbevans1@swarthmore.edu", 
         winner: false, 

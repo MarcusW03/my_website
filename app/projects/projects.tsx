@@ -1,4 +1,14 @@
-export const projects = [
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  date: string;
+  details: string;
+  doi?: string;
+  github?: string;
+}
+
+export const projects: Project[] = [
     { title: "Undergraduate Research at Temple University", description: "Research on xAI and HCI conducted at Temple University", image: "", 
       date: "June 2024 - Present",
       details: "Conducted research for the NSF REU Site for Pervasive Computing at Temple University, within the Vision, Imaging, \

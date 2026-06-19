@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Image from "next/image"
 import { Moon_Dance } from "next/font/google";
 import Link from 'next/link'
@@ -13,15 +11,14 @@ const moon_dance = Moon_Dance({
 export default function Home() {
   return (
     <div className="bg-fixed bg-cover flex flex-col bg-black text-gray-200">
-      <Navbar />
-      <section id="home" className=" page flex-grow container mx-auto px-4 text-center flex flex-col items-center justify-center z-1">
+      <section id="home" className=" min-h-[95vh] flex-grow container mx-auto px-4 text-center flex flex-col items-center justify-center relative z-10">
         <h1 className={`${moon_dance.className} text-8xl font-extrabold mt-10 drop-shadow-lg`}>Marcus Wright</h1>
         <p className="pt-10 mt-4 text-md opacity-100">Aspiring Software Engineer, AI/ML Engineer, Researcher</p>
         <div className="pt-10 mt-6">
           <a href="/projects" className="bg-gray-500 text-gray-200 font-semibold py-2 px-6 rounded-md shadow-md hover:bg-blue-400 duration-600">My Projects</a>
         </div>
       </section>
-      <section id="about" className="page flex-grow container mx-auto px-6 py-12 text-center flex flex-col items-center justify-center z-1">
+      <section id="about" className="min-h-[95vh] flex-grow container mx-auto px-6 py-12 text-center flex flex-col items-center justify-center relative z-10">
             <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-2">
 
             <div className="flex justify-center items-center min-h-150">
@@ -67,7 +64,6 @@ export default function Home() {
             </div>
           </div>
       </section>
-      <Footer />
     </div>
   );
 }

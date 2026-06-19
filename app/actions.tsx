@@ -1,35 +1,48 @@
-'use client';
-    
-export async function handleSubmit(){
-    
-    const name = document.getElementById("form_name") as HTMLInputElement;
-    const email = document.getElementById("form_email") as HTMLInputElement;
-    const message = document.getElementById("form_message") as HTMLTextAreaElement;
+'use server';
 
-    const webhookURL = process.env.NEXT_PUBLIC_SLACK_WEBHOOK_URL;
+export type FormResult =
+  | { status: 'idle' }
+  | { status: 'success' }
+  | { status: 'error'; message: string };
 
-    if (!webhookURL) {
-        console.log("webhook", webhookURL)
-        alert("An error occurred while submitting your message.")
-        return
+export async function handleSubmit(
+  _prevState: FormResult,
+  formData: FormData,
+): Promise<FormResult> {
+  const name = formData.get('name');
+  const email = formData.get('email');
+  const message = formData.get('message');
+
+  if (typeof name !== 'string' || name.trim() === '') {
+    return { status: 'error', message: 'Name is required.' };
+  }
+  if (typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    return { status: 'error', message: 'A valid email is required.' };
+  }
+  if (typeof message !== 'string' || message.trim() === '') {
+    return { status: 'error', message: 'Message is required.' };
+  }
+
+  const webhookURL = process.env.SLACK_WEBHOOK_URL;
+  if (!webhookURL) {
+    return { status: 'error', message: 'Server configuration error.' };
+  }
+
+  try {
+    const response = await fetch(webhookURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text: `*New Contact Form Submission*\n\n*Name:* ${name.trim()}\n*Email:* ${email.trim()}\n*Message:* ${message.trim()}`,
+      }),
+    });
+
+    if (!response.ok) {
+      return { status: 'error', message: 'Failed to send message. Please try again.' };
     }
 
-    try {
-        await fetch(webhookURL, {
-            method: "POST",
-            headers: { 
-                    },
-            body: JSON.stringify({
-                text: `*New Contact Form Submission*\n\n*Name:* ${name.value}\n*Email:* ${email.value}\n*Message:* ${message.value}`,
-            }),
-        });
-        alert('Message sent successfully!');
-
-    }
-    catch (error) {
-        console.error('Error submitting form:', error);
-        alert('An error occurred while submitting your message.');
-    }
-};
-    
-    
+    return { status: 'success' };
+  } catch {
+    return { status: 'error', message: 'An error occurred. Please try again.' };
+  }
+}
